@@ -1,35 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_THANOS",
-      "label": "Thanos",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": [],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "8.3.4"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph (old)",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -52,8 +21,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": null,
-  "iteration": 1644861424732,
+  "id": 29,
+  "iteration": 1644953277794,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -475,7 +444,11 @@
         "type": "datasource"
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "prod-monitoring",
+          "value": "prod-monitoring"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "$datasource"
@@ -501,7 +474,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "kps-kube-prometheus-stack-alertmanager",
+          "value": "kps-kube-prometheus-stack-alertmanager"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "$datasource"
@@ -527,7 +504,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "$datasource"
@@ -552,10 +533,15 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_THANOS}"
+          "uid": "${datasource}"
         },
         "definition": "label_values(alertmanager_alerts, cluster)",
         "hide": 0,
@@ -608,6 +594,6 @@
   "timezone": "utc",
   "title": "Alertmanager / Cluster Overview",
   "uid": "5PR_bYa7z",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }

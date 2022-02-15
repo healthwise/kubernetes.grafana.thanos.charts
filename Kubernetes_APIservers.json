@@ -1,47 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_THANOS",
-      "label": "Thanos",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": [],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "8.3.4"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph (old)",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "text",
-      "name": "Text",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -64,8 +21,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1644861534833,
+  "id": 31,
+  "iteration": 1644953309034,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -89,6 +46,7 @@
     },
     {
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "description": "How many percent of requests (both read and write) in 30 days have been answered successfully and fast enough?",
@@ -153,8 +111,14 @@
       "pluginVersion": "8.3.4",
       "targets": [
         {
-          "expr": "apiserver_request:availability30d{verb=\"all\", cluster=\"$cluster\"}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P5DCFC7561CCDE821"
+          },
+          "exemplar": true,
+          "expr": "apiserver_request:availability30d{verb=\"all\", cluster=~\"AKS-Prod-*\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
           "refId": "A"
@@ -1494,16 +1458,21 @@
         "name": "datasource",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "type": "datasource"
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "AKS-Dev-USW-Products",
+          "value": "AKS-Dev-USW-Products"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_THANOS}"
+          "uid": "P5DCFC7561CCDE821"
         },
         "definition": "",
         "hide": 0,
@@ -1526,10 +1495,14 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_THANOS}"
+          "uid": "P5DCFC7561CCDE821"
         },
         "definition": "label_values(up{job=\"apiserver\", cluster=\"$cluster\"}, instance)",
         "hide": 0,
@@ -1585,6 +1558,6 @@
   "timezone": "utc",
   "title": "Kubernetes / API servers",
   "uid": "yERHKea7k",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
