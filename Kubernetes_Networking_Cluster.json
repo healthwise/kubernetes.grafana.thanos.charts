@@ -438,7 +438,7 @@
           "decimals": 2,
           "link": true,
           "linkTooltip": "Drill down",
-          "linkUrl": "d/8b7a8b326d7a6f1f04244066368c67af/kubernetes-networking-namespace-pods?orgId=1&refresh=30s&var-namespace=$__cell",
+          "linkUrl": "d/oYAB5e-7z/kubernetes-networking-namespace-pods?orgId=1&refresh=30s&var-namespace=$__cell",
           "pattern": "namespace",
           "thresholds": [],
           "type": "number",
