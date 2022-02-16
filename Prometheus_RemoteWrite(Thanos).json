@@ -1463,6 +1463,6 @@
   "timezone": "utc",
   "title": "Prometheus / Remote Write (Thanos)",
   "uid": "oVEghea7k",
-  "version": 1,
+  "version": 4,
   "weekStart": ""
 }
